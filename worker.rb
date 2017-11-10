@@ -12,7 +12,7 @@ end
 
 sleep 10
 
-SimpleRabbit::Connection.get(user: "bunnyrabbit", pass: "bunnypass", host: "localhost:5672")
+SimpleRabbit::Connection.get(user: "bunnyrabbit", pass: "bunnypass", host: "rabbitmq")
 
 SimpleRabbit::ConsumerWorker.run("jobs.created") do |message|
   data = JSON.parse(message)
